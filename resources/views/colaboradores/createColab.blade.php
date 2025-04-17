@@ -30,12 +30,13 @@
 
                 @php
                 $capitais = [
-                    'Rio Branco', 'Maceió', 'Macapá', 'Manaus', 'Salvador',
-                    'Fortaleza', 'Brasília', 'Vitória', 'Goiânia', 'São Luís',
-                    'Cuiabá', 'Campo Grande', 'Belo Horizonte', 'Belém',
-                    'João Pessoa', 'Curitiba', 'Recife', 'Teresina',
-                    'Rio de Janeiro', 'Natal', 'Porto Alegre', 'Porto Velho',
-                    'Boa Vista', 'Florianópolis', 'São Paulo', 'Aracaju', 'Palmas'
+                    'Aracaju (SE)', 'Belém (PA)', 'Belo Horizonte (MG)', 'Boa Vista (RR)',
+                    'Brasília (DF)', 'Campo Grande (MS)', 'Cuiabá (MT)', 'Curitiba (PR)',
+                    'Florianópolis (SC)', 'Fortaleza (CE)','Goiânia (GO)', 'João Pessoa (PB)',
+                    'Macapá (AP)', 'Maceió (AL)', 'Manaus (AM)', 'Natal (RN)',
+                    'Palmas (TO)', 'Porto Alegre (RS)', 'Porto Velho (RO)', 'Recife (PE)',
+                    'Rio Branco (AC)', 'Rio de Janeiro (RJ)', 'Salvador (BA)', 'São Luís (MA)',
+                    'São Paulo (SP)', 'Teresina (PI)','Vitória (ES)'
                 ];
                 @endphp
 
