@@ -7,6 +7,6 @@ class Kernel extends HttpKernel
 {
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
-        'checkLogin' => \App\Http\Middleware\CheckLogin::class
+        'checkAuth' => \App\Http\Middleware\CheckAuth::class,
     ];
 }
