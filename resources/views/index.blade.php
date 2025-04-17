@@ -8,10 +8,11 @@
     <a href="{{ route('colaboradores.create') }}">Novo Colaborador</a>
     <ul>
         @foreach ($colaboradores as $colaborador)
-            <li>
-                {{ $colaborador->nome_completo }} - {{ $colaborador->setor }} - {{ $colaborador->cidade }} - {{ $colaborador->checkin }}
-                <a href="{{ route('colaboradores.delete', $colaborador->id) }}" style="color: red; margin-left: 10px;">Excluir</a>
-            </li>
+        <li>
+            {{ $colaborador->nome_completo }} - {{ $colaborador->setor }}
+            <a href="{{ route('colaboradores.edit', $colaborador->id) }}" style="color: blue;">Editar</a>
+            <a href="{{ route('colaboradores.delete', $colaborador->id) }}" style="color: red;">Excluir</a>
+        </li>
         @endforeach
 
     @if ($colaboradores->isEmpty())

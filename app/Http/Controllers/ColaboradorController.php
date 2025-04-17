@@ -31,6 +31,30 @@ class ColaboradorController extends Controller
         return redirect()->route('colaboradores.index');
     }
 
+    public function edit($id)
+    {
+
+        $colaborador = Colaborador::findOrFail($id);
+        return view('colaboradores.edit', compact('colaborador'));
+
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nome_completo' => 'required',
+            'setor' => 'required',
+            'cidade' => 'required',
+            'checkin' => 'required|date',
+        ]);
+
+    $colaborador = Colaborador::findOrFail($id);
+    $colaborador->update($request->all());
+    
+    return redirect()->route('colaboradores.index');
+    }
+
+
     public function destroy($id)
     {
         Colaborador::destroy($id);
@@ -38,9 +62,9 @@ class ColaboradorController extends Controller
     }
 
     public function delete($id)
-{
+    {
     $colaborador = Colaborador::findOrFail($id);
     return view('colaboradores.delete', compact('colaborador'));
-}
+    }
 }
 

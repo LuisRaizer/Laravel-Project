@@ -1,31 +1,25 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Models\Usuario;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
-    public function create()
+    public function showLoginForm()
     {
-        return view('usuarios.create');
+        return view('user');
     }
 
-    public function store(Request $request)
+    public function login(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'senha' => 'required|min:6',
-        ]);
+        $emailCerto = 'admin@email.com';
+        $senhaCerta = '123';
 
-        Usuario::create($request->all());
-        return redirect()->route('usuarios.index');
-    }
-
-    public function destroy($id)
-    {
-        Usuario::destroy($id);
-        return redirect()->route('usuarios.index');
+        if ($request->email == $emailCerto && $request->password == $senhaCerta) {
+            session(['logado' => true]);
+            return redirect('/');
+        } else {
+            return redirect('/login')->with('erro', 'Email ou senha errados');
+        }
     }
 }
