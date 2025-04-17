@@ -22,6 +22,7 @@
                 <div class="mb-3">
                     <label class="form-label">Setor:</label>
                     <select name="setor" class="form-select" required>
+                        <option value="">Selecione o setor</option>
                         <option value="Tecnologia">Tecnologia</option>
                         <option value="Administrativo">Administrativo</option>
                         <option value="Projeto">Projeto</option>
