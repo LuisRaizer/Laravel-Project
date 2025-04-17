@@ -1,10 +1,10 @@
 # Projeto 3E
 
-![Logo Laravel](https://laravel.com/img/logotype.min.svg)
+# ![Logo Laravel](https://laravel.com/img/logotype.min.svg)
 
 Bem-vindo ao meu projeto! Este é um sistema desenvolvido em Laravel para gerenciar colaboradores, com funcionalidades como login, cadastro, leitura,  edição e exclusão de registros.
 
-# 🚀 Requisitos para Rodar o Projeto
+## 🚀 Requisitos para Rodar o Projeto
 Antes de começar, certifique-se de que você tem o seguinte instalado no seu ambiente:
 
 - PHP: Versão 8.1 ou superior.
@@ -12,7 +12,7 @@ Antes de começar, certifique-se de que você tem o seguinte instalado no seu am
 - Banco de Dados: MySQL, PostgreSQL ou SQLite.
 - Servidor Web: Apache, Nginx ou o servidor embutido do Laravel.
 
-# 🛠️ Como Configurar o Projeto
+## 🛠️ Como Configurar o Projeto
 Siga os passos abaixo para configurar e rodar o projeto:
 
 1. Clone o Repositório

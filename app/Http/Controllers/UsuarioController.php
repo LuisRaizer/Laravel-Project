@@ -17,15 +17,15 @@ class UsuarioController extends Controller
 
         if ($request->email == $emailCerto && $request->password == $senhaCerta) {
             session(['logado' => true]);
-            return redirect('/');
+            return redirect('/home');
         } else {
-            return redirect('/login')->with('erro', 'Email ou senha estão errados');
+            return redirect('/')->with('erro', 'Email ou senha estão errados');
         }
     }
 
     public function logout()
     {
     session()->forget('logado');
-    return redirect('/login');
+    return redirect('/');
 }
 }
