@@ -7,7 +7,7 @@ class UsuarioController extends Controller
 {
     public function showLoginForm()
     {
-        return view('user');
+        return view('colaboradores.user');
     }
 
     public function login(Request $request)
@@ -22,4 +22,10 @@ class UsuarioController extends Controller
             return redirect('/login')->with('erro', 'Email ou senha errados');
         }
     }
+
+    public function logout()
+    {
+    session()->forget('logado');
+    return redirect('/login');
+}
 }

@@ -8,8 +8,9 @@ use App\Http\Middleware\CheckLogin;
 Route::get('/login', [UsuarioController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [UsuarioController::class, 'login']);
 
-Route::middleware(['CheckAuth'])->group(function () {
+Route::middleware(['auth.session'])->group(function () {
     Route::get('/', [ColaboradorController::class, 'index'])->name('home');
     Route::resource('colaboradores', ColaboradorController::class)->except(['show']);
     Route::get('colaboradores/{id}/delete', [ColaboradorController::class, 'delete'])->name('colaboradores.delete');
+    Route::get('/logout', [UsuarioController::class, 'logout'])->name('logout');
 });

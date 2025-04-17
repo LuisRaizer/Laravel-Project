@@ -6,7 +6,6 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 class Kernel extends HttpKernel
 {
     protected $routeMiddleware = [
-        'auth' => \App\Http\Middleware\Authenticate::class,
-        'CheckAuth' => \App\Http\Middleware\CheckAuth::class,
-    ];
+        'auth.session' => \App\Http\Middleware\AuthSession::class,
+        ];
 }
