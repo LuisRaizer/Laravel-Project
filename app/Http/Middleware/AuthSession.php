@@ -7,11 +7,14 @@ use Closure;
 class AuthSession
 {
     public function handle($request, Closure $next)
-    {
-        if (!session()->has('logado')) {
-            return redirect('/login')->with('error', 'Acesso não autorizado');
-        }
+{
+    Log::info('Middleware AuthSession executado.');
 
-        return $next($request);
+    if (!session()->has('logado')) {
+        Log::warning('Acesso não autorizado. Redirecionando para login.');
+        return redirect('/')->with('erro', 'Acesso não autorizado');
     }
+
+    return $next($request);
+}
 }
