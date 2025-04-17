@@ -15,7 +15,7 @@ class ColaboradorController extends Controller
 
     public function create()
     {
-        return view('colaboradores.create');
+        return view('colaboradores.createColab');
     }
 
     public function store(Request $request)
@@ -36,5 +36,11 @@ class ColaboradorController extends Controller
         Colaborador::destroy($id);
         return redirect()->route('colaboradores.index');
     }
+
+    public function delete($id)
+{
+    $colaborador = Colaborador::findOrFail($id);
+    return view('colaboradores.delete', compact('colaborador'));
+}
 }
 

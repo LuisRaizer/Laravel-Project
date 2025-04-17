@@ -17,14 +17,22 @@
             <option value="Projeto">Projeto</option>
         </select><br><br>
 
+        @php
+    $capitais = [
+        'Rio Branco', 'Maceió', 'Macapá', 'Manaus', 'Salvador',
+        'Fortaleza', 'Brasília', 'Vitória', 'Goiânia', 'São Luís',
+        'Cuiabá', 'Campo Grande', 'Belo Horizonte', 'Belém',
+        'João Pessoa', 'Curitiba', 'Recife', 'Teresina',
+        'Rio de Janeiro', 'Natal', 'Porto Alegre', 'Porto Velho',
+        'Boa Vista', 'Florianópolis', 'São Paulo', 'Aracaju', 'Palmas'
+    ];
+@endphp
+        
         <label>Cidade:</label>
         <select name="cidade" required>
-            <option value="São Paulo">São Paulo</option>
-            <option value="Rio de Janeiro">Rio de Janeiro</option>
-            <option value="Belo Horizonte">Belo Horizonte</option>
-            <option value="Brasília">Brasília</option>
-            <option value="Salvador">Salvador</option>
-            <!-- Pode adicionar mais capitais aqui -->
+        @foreach ($capitais as $cidade)
+        <option value="{{ $cidade }}">{{ $cidade }}</option>
+    @endforeach
         </select><br><br>
 
         <label>Data de Check-in:</label>
