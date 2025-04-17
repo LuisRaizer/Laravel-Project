@@ -19,7 +19,7 @@ class UsuarioController extends Controller
             session(['logado' => true]);
             return redirect('/');
         } else {
-            return redirect('/login')->with('erro', 'Email ou senha errados');
+            return redirect('/login')->with('erro', 'Email ou senha estão errados');
         }
     }
 
