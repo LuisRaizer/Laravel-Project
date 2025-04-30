@@ -1,5 +1,3 @@
-# Projeto 3E
-
 # ![Logo Laravel](https://laravel.com/img/logotype.min.svg)
 
 Bem-vindo ao meu projeto! Este é um sistema desenvolvido em Laravel para gerenciar colaboradores, com funcionalidades como login, cadastro, leitura,  edição e exclusão de registros.
