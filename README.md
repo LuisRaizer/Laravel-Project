@@ -22,7 +22,7 @@ Antes de começar, certifique-se de que você tem o seguinte instalado no seu am
 ## 🚀 Configuração Rápida
 
 ### 1. Instalação Inicial
-Execute esses comandos:
+Execute esses comandos no terminal:
 ```bash
 git clone [URL_DO_REPOSITORIO]
 cd [CAMINHO_PARA_A_PASTA_DO_PROJETO]
@@ -33,7 +33,7 @@ php artisan key:generate
 ### 2. Configuração do Banco de Dados
 Certifique-se que no arquivo .env estão configuradas corretamente as variáveis de ambiente
 
-Execute esses comandos:
+Execute esses comandos no terminal:
 ```bash
 php artisan migrate
 ```
