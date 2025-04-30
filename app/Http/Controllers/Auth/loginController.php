@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AuthenticatedSessionController extends Controller
+class loginController extends Controller
 {
-    public function create()
+    public function showLoginForm()
     {
         return view('auth.login');
     }
 
-    public function store(Request $request)
+    public function login(Request $request)
     {
         $credentials = $request->validate([
             'email' => 'required|email',
@@ -28,7 +28,7 @@ class AuthenticatedSessionController extends Controller
         ]);
     }
 
-    public function destroy(Request $request)
+    public function logout(Request $request)
     {
         auth()->logout();
         $request->session()->invalidate();

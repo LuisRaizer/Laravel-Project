@@ -1,16 +1,15 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\ColaboradorController;
-use App\Http\Middleware\AuthSession;
+use Illuminate\Support\Facades\Route;
 
-Route::get('/', [UsuarioController::class, 'showLoginForm'])->name('loginform');
-Route::post('/', [UsuarioController::class, 'login'])->name('login');
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/', [LoginController::class, 'login']);
 
-Route::middleware(['auth.session'])->group(function () {
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/home', [ColaboradorController::class, 'index'])->name('home');
     Route::resource('colaboradores', ColaboradorController::class)->except(['show']);
-    Route::get('colaboradores/{id}/delete', [ColaboradorController::class, 'delete'])->name('colaboradores.delete');
-    Route::get('/logout', [UsuarioController::class, 'logout'])->name('logout');
+    Route::get('colaboradores/{id}/delete', [ColaboradorController::class, 'delete']) ->name('colaboradores.delete');
 });
