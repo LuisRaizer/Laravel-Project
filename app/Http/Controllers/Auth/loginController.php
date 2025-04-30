@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class loginController extends Controller
 {
@@ -20,7 +21,7 @@ class loginController extends Controller
         ]);
 
         if (auth()->attempt($credentials)) {
-            return redirect()->intended('/colaboradores');
+            return redirect()->intended('/home');
         }
 
         return back()->withErrors([
