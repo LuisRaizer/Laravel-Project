@@ -1,61 +1,35 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card shadow-sm">
-                <div class="card-body p-5">
-                    @if(session('status'))
-                        <div class="alert alert-success mb-4">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <h2 class="text-center mb-4">Login</h2>
-
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input id="email" type="email" 
-                                   class="form-control @error('email') is-invalid @enderror" 
-                                   name="email" value="{{ old('email') }}" 
-                                   required autofocus>
-                            @error('email')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Senha</label>
-                            <input id="password" type="password" 
-                                   class="form-control @error('password') is-invalid @enderror" 
-                                   name="password" required>
-                            @error('password')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="remember" name="remember">
-                            <label class="form-check-label" for="remember">Lembrar de mim</label>
-                        </div>
-
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary">
-                                Entrar
-                            </button>
-                        </div>
-                    </form>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Projeto 3E</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+            <h2 class="text-center mb-4">Login</h2>
+            
+            @if(session('erro'))
+                <div class="alert alert-danger">{{ session('erro') }}</div>
+            @endif
+            
+            <form action="{{ route('login') }}" method="POST">
+                @csrf
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
                 </div>
-            </div>
+                
+                <div class="mb-3">
+                    <label for="password" class="form-label">Senha:</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-100">Entrar</button>
+            </form>
         </div>
     </div>
-</div>
-@endsection
+</body>
+</html>
