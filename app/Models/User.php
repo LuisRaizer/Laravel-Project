@@ -8,5 +8,4 @@ class User extends Authenticatable
 {
     protected $table = 'users';
     protected $fillable = ['email', 'password'];
-    public $timestamps = false;
 }
