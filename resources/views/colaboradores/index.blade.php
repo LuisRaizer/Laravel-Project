@@ -34,9 +34,10 @@
             </div>
         @endif
 
-        <div class="mt-4 text-center">
-            <a href="{{ route('logout') }}" class="btn btn-outline-secondary">Sair</a>
-        </div>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="btn btn-outline-secondary">Sair</button>
+        </form>
 
     </div>
 
