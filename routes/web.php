@@ -1,20 +1,16 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\ColaboradorController;
+use App\Http\Middleware\AuthSession;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [UsuarioController::class, 'showLoginForm'])->name('loginform');
+Route::post('/', [UsuarioController::class, 'login'])->name('login');
+
+Route::middleware(['auth.session'])->group(function () {
+    Route::get('/home', [ColaboradorController::class, 'index'])->name('home');
+    Route::resource('colaboradores', ColaboradorController::class)->except(['show']);
+    Route::get('colaboradores/{id}/delete', [ColaboradorController::class, 'delete'])->name('colaboradores.delete');
+    Route::get('/logout', [UsuarioController::class, 'logout'])->name('logout');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-require __DIR__.'/auth.php';
