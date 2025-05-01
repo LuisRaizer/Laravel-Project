@@ -23,13 +23,22 @@ Antes de começar, certifique-se de que você tem o seguinte instalado no seu am
 Execute esses comandos no terminal:
 ```bash
 git clone [URL_DO_REPOSITORIO]
-cd [CAMINHO_PARA_A_PASTA_DO_PROJETO]
+cd [CAMINHO_PARA_A_PASTA_DO_PROJETO] (#Laravel-Project)
 composer install
 cp .env.example .env
 php artisan key:generate
 ```
 ### 2. Configuração do Banco de Dados
-Certifique-se que no arquivo .env estão configuradas corretamente as variáveis de ambiente
+Certifique-se que no arquivo '.env' estão configuradas corretamente as variáveis de ambiente do banco de dados
+
+```.env
+DB_CONNECTION=(Ou sqlite, ou pgsql, ou mysql dependendo de qual você usar)
+DB_HOST=127.0.0.1
+DB_PORT=(Depende de qual Banco de Dados)
+DB_DATABASE=(NOME_DO_BANCO)
+DB_USERNAME=(NOME_DE_USUÁRIO)
+DB_PASSWORD=(SENHA_DO_BANCO)
+```
 
 Execute esses comandos no terminal:
 ```bash
