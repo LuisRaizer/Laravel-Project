@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\auth\LoginController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ColaboradorController;
 use Illuminate\Support\Facades\Route;
 
